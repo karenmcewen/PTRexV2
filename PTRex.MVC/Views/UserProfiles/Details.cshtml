@@ -1,0 +1,69 @@
+﻿@model PTRex.MVC.Models.UserProfile
+
+@{
+    ViewBag.Title = "My Profile";
+}
+
+<link href="~/Content/UserProfile.css" rel="stylesheet" />
+
+
+<div class="nameHeading">
+    @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
+</div>
+
+<div class="footer editProfile">
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID })
+</div>
+
+<div>
+    <br />
+    <div class="row profileInfo">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <img src="@Url.Content(Model.Photo)" class="center-block" id="details-img" alt="Picture" />
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <dl class="dl-horizontal">
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd class="bodyText">
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd class="bodyText">
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </dt>
+
+                <dd class="bodyText">
+                    @Html.DisplayFor(model => model.DateOfBirth)
+                </dd>
+
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd class="bodyText">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd class="bodyText">
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

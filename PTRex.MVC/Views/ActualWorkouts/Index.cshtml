@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PTRex.MVC.Models.ActualWorkout>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">MyR(e)x</h2>
+
+<div class="enterWorkout">
+    @Html.ActionLink("Enter a Completed Workout", "Create")
+</div>
+<table class="table target table-hover table-striped table-responsive">
+    <tr>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+
+        <th id="tableHeader">
+            Exercise
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TimeOfDay)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumSets)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ActualNumSets)
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumReps)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ActualNumReps)
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.PainLevel)
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ActualNotes)
+        <th id="tableHeader">
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td id="exerciseReferenceTable">
+                <p id="exerciseName">
+                    @Html.DisplayFor(modelItem => item.Date)
+                </p>
+            </td>
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetWorkout.ExerciseNickName)
+            </td>
+
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TimeOfDay.TimeOfDay1)
+            </td>
+            <td class="centerData" id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumSets)
+            </td>
+            <td class="centerData" id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.ActualNumSets)
+            </td>
+            <td class="centerData" id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumReps)
+            </td>
+            <td class="centerData" id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.ActualNumReps)
+            </td>
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.PainLevel.PainLevelName)
+            </td>
+
+
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.ActualNotes)
+            </td>
+            <td id="editDelete">
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

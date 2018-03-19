@@ -1,0 +1,99 @@
+﻿@model PTRex.MVC.Models.ActualWorkout
+
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">Edit a Completed Workout</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.TargetWorkoutID)
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.TargetWorkout.ExerciseNickName, "Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TargetWorkout.ExerciseNickName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetWorkout.ExerciseNickName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.ActualNumSets, "Sets Completed", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualNumSets, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualNumSets, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.ActualNumReps, "Reps Completed", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualNumReps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualNumReps, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.Date, "Date Completed", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.TimeOfDayID, "Time Of Day", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TimeOfDayID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TimeOfDayID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.WeightUsed, "Weight Used", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WeightUsed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WeightUsed, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.PainLevelID, "Pain Level", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PainLevelID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PainLevelID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.ActualNotes, "Notes", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualNotes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualNotes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

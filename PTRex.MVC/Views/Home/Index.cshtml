@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/Content/HomeDashboardStyleSheet.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <img src="/Images/PTRex logo/PTRex logo_graphic & text logo_no tag.png" alt="PTR(e)x" width="350" height="300">
+
+                        <h4 id="tag-line">An innovative and easy-to-use app to help you complete your physical therapy at home</h4>
+                        <p>
+                            <a class="btn btn-primary" href="#" role="button" data-target="#loginModal" data-toggle="modal">Log In to Begin</a>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-app">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h4 class="about-app-heading"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="font-size:30px"></span><br />Physical Therapy made easy so you can focus on what matters -- <span id="getting-healthy">getting healthy.</span></h4>
+                <p class="about-app">
+                    PTR(e)x helps you complete and track your prescribed physical therapy. When you sign up, you'll create a profile and
+                    create your physical therapy plans. You simply select the exercises you've been prescribed by your doctor, from our extensive exercises database.
+                    Enter the frequency and save. It's that easy.
+                </p>
+                <p>
+                    When you start a workout, you'll pick an exercise from your plan. We'll tell you the number of reps and sets to do. You log what you did. That's it. You will be able to track your progress over
+                    time. PTR(e)x makes follow-up appointments with your healthcare provider much easier, with all your workouts' results in one easy app.
+                </p>
+                <p>It's so easy, a T-Rex could do it. (Maybe not, they've got short arms &#x1F609;)</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="about-team">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h4 class="about-app-heading"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" style="font-size:20px"></span></h4>
+                <p>
+
+                    This app was created by a talented team of <a href="https://wecancodeit.org/" target="_blank">We Can {Code} IT</a> software developers. Read more about the team <a href="@Url.Action("About","Home")">here.</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <div>
+        @Html.Partial("_LoginModal")
+    </div>
+</div>
+
+@*<div class="row">
+        <div class="col-md-4">
+            <h2>How to Use the App</h2>
+            <p>
+                Quick description of the app here...
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+
+    </div>*@
+

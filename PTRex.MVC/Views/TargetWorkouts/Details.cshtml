@@ -1,0 +1,79 @@
+﻿@model PTRex.MVC.Models.TargetWorkout
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TargetWorkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exercis.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exercis.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserProfile.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserProfile.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExerciseNickName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExerciseNickName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetSessionsPerDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetNumSets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetNumSets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetNumReps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetNumReps)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetNotes)
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

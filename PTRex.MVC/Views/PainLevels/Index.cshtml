@@ -1,0 +1,34 @@
+﻿@model IEnumerable<PTRex.MVC.Models.PainLevel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pain Level Reference Table Index</h2>
+
+<p>
+    This is Pain Level data for a pre-populated reference table to be used in drop-down menus.<br />
+    PTR(e)x Application users will not have access to this table.  <br />
+
+</p>
+
+<button type="button" class="btn btn-outline-primary">@Html.ActionLink("Create New", "Create")</button>
+
+<table class="table table-striped table-responsive">
+    <tr>
+        <th scope="col">Pain Level (by descriptor and numeric 0-6)</th>
+        <th scope="col">Options</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="table">
+            <th scope="row">@Html.DisplayFor(modelItem => item.PainLevelName)</th>
+            <td>
+                <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button>
+                <button type="button" class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.ID })</button>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PTRex.MVC.Models.Exercise>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
+
+<div class="referencePageHeader">Exercise Reference Table</div>
+
+<table class="table table-hover table-striped table-responsive exerciseReferenceTable">
+    <tr>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.Name)
+
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.HowTo)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.Equipment)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ResourceVideo)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ResourcePhoto)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.ResourceText)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td id="headingGreyBG">
+                <div id="exerciseName"> @Html.DisplayFor(modelItem => item.Name)</div>
+
+                @Html.ActionLink("More Information", "Details", new { id = item.ID })
+
+            </td>
+            <td class="tableWidth" id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.HowTo)
+            </td>
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.Equipment)
+            </td>
+            <td id="exerciseReferenceTable">
+                @if (item.ResourceVideo != null)
+                {
+                    <iframe width="240" height="185" src="@Url.Content(item.ResourceVideo)" frameborder="0"></iframe>
+                }
+            </td>
+
+            <td id="exerciseReferenceTable">
+                @if (item.ResourcePhoto != null)
+                {
+                    <img src="@Url.Content(item.ResourcePhoto)" alt="photo of exercise" class="tableIMG">
+                }
+            </td>
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.ResourceText)
+            </td>
+
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d00d635d7d9b41d9bae2f78bd11b0b8e" Name="Diagram1">
+        <EntityTypeShape EntityType="PTRexModel.ActualWorkout" Width="1.5" PointX="12.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.AspNetRole" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.AspNetUser" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.Exercise" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.PainLevel" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.ProfilePix" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.TargetWorkout" Width="1.5" PointX="10.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.TimeOfDay" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTRexModel.UserProfile" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="PTRexModel.FK_ActualWorkouts_PainLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_ActualWorkouts_TargetWorkouts" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_ActualWorkouts_TimeOfDay" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_UserProfile_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_TargetWorkouts_Exercises" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_ProfilePix_UserProfile1" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.FK_TargetWorkouts_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="PTRexModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

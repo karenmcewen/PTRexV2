@@ -1,0 +1,101 @@
+﻿@model PTRex.Models.ActualWorkout
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="actualTableDiv">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Exercise
+            @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.ExerciseNickName)
+        </dd>
+        <dt>
+            Target #Sets
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumSets)
+        </dd>
+        <dt>
+            Target #Reps
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumReps)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNumSets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNumSets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNumReps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNumReps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightUsed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightUsed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PainLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PainLevel.PainLevelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfDay.TimeOfDay1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

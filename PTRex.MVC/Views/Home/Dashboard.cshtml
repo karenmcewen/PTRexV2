@@ -1,0 +1,97 @@
+﻿@model PTRex.MVC.Models.UserProfile
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/HomeDashboardStyleSheet.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['bar'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Define the chart to be drawn.
+
+        var data = google.visualization.arrayToDataTable([
+          ['Workout', 'MyR(e)x Plan', 'MyR(e)x'],
+          ['Sit-Stand', 10, 5],
+          ['Pectoral Stretch', 5, 4],
+          ['Pendulum Exercise', 10, 8],
+          ['Shoulder Roll', 5, 4],
+          ['Sit-Stand', 10, 7]
+        ]);
+
+        var options = {
+            chart: {
+                title: 'MyR(e)x Progress',
+                subtitle: 'Your last five logged exercises are listed here. See if you are hitting your targets.'
+            },
+            vAxis: { format: 'decimal' },
+            colors: ['#7570b3', '#d95f02']
+        };
+
+
+        // Instantiate and draw the chart.
+        var chart = new google.charts.Bar(document.getElementById('myProgressChart'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    };
+
+
+</script>
+
+<div class="container-fluid">
+    <div class="section" id="progress-panel">
+        <h2>Welcome!</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">My Progress</h3>
+            </div>
+            <div class="panel-body">
+                <h4>Are you hitting your goals? Look at your progress to see where you can focus and improve. Remember, you're getting healthier each time!</h4>
+                <!--Progress google chart goes here-->
+                <div id="myProgressChart" />
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="workout-now">
+        <h2 class="workout-now">
+            Ready to workout?    <a class="btn btn-primary" href="@Url.Action("Create","ActualWorkouts")" role="button">Start your workout</a>
+        </h2>
+    </div>
+
+    <div class="section" id="bottom-dash-panel">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">My Profile</div>
+                    <div class="panel-body">
+                        <p>
+                            Create, view, or update your profile information
+                        </p>
+                        <p>
+                            <a class="btn btn-primary" href="@Url.Action("Details","UserProfiles")" role="button">My Profile</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">MyR(e)x Plan</div>
+                    <div class="panel-body">
+                        <p>
+                            View your physical therapy plan
+                        </p>
+                        <p>
+                            <a class="btn btn-primary" href="@Url.Action("Index","TargetWorkouts")" role="button">MyR(e)x Plan</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PTRex.MVC.Models.TargetWorkout>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
+<link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
+<div class="target">
+    <h2>MyR(e)x Plan</h2>
+    <h4>These are the exercises your physical therapist has prescribed.</h4>
+
+    <h4>
+        @Html.ActionLink("Add New Exercise", "Create")
+    </h4>
+</div>
+<table class="table target table-hover">
+    <tr>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.Exercise.Name)
+        </th>
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TargetNumSets)
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TargetNumReps)
+        </th>
+
+        <th id="tableHeader">
+            @Html.DisplayNameFor(model => model.TargetNotes)
+        </th>
+
+
+
+        <th id="tableHeader"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td id="exerciseReferenceTable" class="exerciseName">
+                @Html.DisplayFor(modelItem => item.Exercise.Name)
+
+            </td>
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetNumSets)
+            </td>
+
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetNumReps)
+            </td>
+
+            <td id="exerciseReferenceTable">
+                @Html.DisplayFor(modelItem => item.TargetNotes)
+            </td>
+
+
+            <td id="editDelete">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<hr />

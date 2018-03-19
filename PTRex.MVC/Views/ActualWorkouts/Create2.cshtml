@@ -1,0 +1,115 @@
+﻿@model PTRex.MVC.ViewModels.WorkoutViewModel
+
+@{
+    ViewBag.Title = "Create2";
+}
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">Workout now!</h2>
+<div class="target"><h3>@Model.TargetWorkout.ExerciseNickName</h3></div>
+
+
+@using (Html.BeginForm("SaveActualWorkout", "ActualWorkouts", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => Model.TargetWorkout.ID)
+        @Html.HiddenFor(model => Model.TargetWorkout.TargetNumReps)
+        @Html.HiddenFor(model => Model.TargetWorkout.TargetNumSets)
+        @Html.HiddenFor(model => Model.TargetWorkout.TargetNotes)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualWorkout.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualWorkout.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.TimeOfDayID, "Time Of Day", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.ActualWorkout.TimeOfDayID,
+                         new SelectList(ViewBag.TimesOfDay, "ID", "TimeOfDay1"),
+                         "-- Select Time of Day --", htmlAttributes: new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.ActualWorkout.TimeOfDayID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="createTableDiv">
+            <div class="col-md-2 createTable">
+                Target #Sets
+            </div>
+            <div class="col-md-10">
+                @Model.TargetWorkout.TargetNumSets
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.ActualNumSets, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualWorkout.ActualNumSets, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualWorkout.ActualNumSets, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="createTableDiv">
+            <div class="col-md-2 createTable">
+                Target #Reps
+            </div>
+            <div class="col-md-10">
+                @Model.TargetWorkout.TargetNumReps
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.ActualNumReps, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualWorkout.ActualNumReps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualWorkout.ActualNumReps, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.PainLevelID, "Pain Level", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ActualWorkout.PainLevelID, new SelectList(ViewBag.PainLevels, "ID", "PainLevelName"),
+                         "-- Select Pain Level --", htmlAttributes: new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.ActualWorkout.PainLevelID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActualWorkout.ActualNotes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ActualWorkout.ActualNotes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualWorkout.ActualNotes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit your exercise and do another!" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="target">
+    <h4>
+
+        @Html.ActionLink("I'm done today!", "Index")
+    </h4>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
