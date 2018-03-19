@@ -1,0 +1,76 @@
+﻿body {
+    color:black;
+   
+}
+
+.tableIMG{
+    max-height:250px;
+    max-width:300px;
+           }
+
+.tableWidth{
+    max-width: 250px;
+}
+
+#exerciseReferenceTable{
+    border: 1px gray solid;
+}
+
+#exerciseName{
+    color: #5B40A6;
+font-size: 18px;
+font-weight: bold;
+
+}
+
+.createNewExercise{
+text-align: center;
+}
+
+.createNewExercise a
+{
+ color: #5B40A6;
+font-size: 15px;
+text-align: center;
+}
+
+#headingGreyBG{
+        
+        border: 1px gray solid;
+
+}
+
+#tableHeader{
+color: black;
+font-size: 16px;
+font-weight: normal;
+background-color: white;
+
+}
+
+.nameHeading{
+color: #5B40A6;
+font-size: 35px;
+font-weight: bold;
+padding-top: 60px;
+text-align:center;
+}
+
+.referencePageHeader{
+font-size: 30px;
+font-weight: bold;
+text-align:center;
+padding-top: 20px;
+color: #5B40A6;
+}
+
+#detailsPhoto{
+    border: 1px black solid;
+    max-width: 500px;   
+}
+
+#video{
+   
+}
+
+

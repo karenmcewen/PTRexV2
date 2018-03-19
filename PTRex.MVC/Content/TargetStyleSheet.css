@@ -1,0 +1,63 @@
+﻿body {
+    color:black;
+   
+}
+.target h2 {
+    color:#5B40A6;
+     font-weight:700;
+}
+.target h3, h4 {
+    color:#5B40A6;
+}
+.target form-group {
+     color:#5B40A6;
+     font-weight:700;
+     font-size:large;
+}
+.target a {
+    color:orange;
+    font-weight:700;
+    text-decoration:underline;
+}
+.target btn {
+     background-color: #5B40A6;
+}
+
+.table {
+    font-size: 17px;
+}
+
+.noBreak{
+    display:inline;
+}
+.thumbnail {
+    border-color:orange;
+    border-width:3px;
+    text-align:center;
+}
+.targetDeletePage h4{
+    text-align:center;
+    font-weight:bold;
+    color: #5B40A6;
+}
+.targetDeletePage h3{
+    text-align:center;
+    font-weight:bold;
+    color: #5B40A6;
+}
+.targetDeletePage p{
+    text-align:center;
+    font-size:18px;
+    color: #5B40A6;
+}
+
+.exerciseName {
+    color: #5B40A6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#editDelete{
+    background-color: white;
+}
+

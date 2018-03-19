@@ -1,0 +1,62 @@
+﻿body {
+    background-image: url('../Images/PTRex logo/PTRex logo_graphic only logo.png');
+    background-size: 23%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+}
+
+.bodyText{
+   font-size: 16px;
+   color: black;
+}
+
+.nameHeading{
+    color: #5B40A6;
+font-size: 40px;
+font-weight: bold;
+text-align:center;
+padding-top: 50px;
+}
+
+.nameHeading:hover { 
+    color: #FFAB0D;
+}
+
+
+.heading {
+color: #5B40A6;
+font-size: 19px;
+}
+
+.editProfileHeading{
+color: #5B40A6;
+font-size: 17px;
+}
+
+.editProfile{
+text-align: center;
+}
+
+.editProfile a
+{
+    color: black;
+font-size: 16px;
+}
+
+.profileInfo{
+    background-color: rgba(211, 211, 211, 0.5);
+    border-top: 20px solid rgba(211, 211, 211, 0.01);
+    border-bottom: 20px solid rgba(211, 211, 211, 0.01);
+}
+
+.createProfilePadding{
+    padding-left: 9%;
+}
+
+.centerAlign{
+    text-align: center;
+}
+
+
+

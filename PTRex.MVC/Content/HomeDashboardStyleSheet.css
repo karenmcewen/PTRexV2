@@ -1,0 +1,62 @@
+﻿body {
+}
+
+.header-content {
+    padding-top:50px;
+    padding-bottom:50px;
+    text-align:center;
+}
+
+
+
+.about-team {
+    padding-top:50px;
+    text-align:center;
+}
+
+#app-name{
+    color: #5B40A6;
+    font-size: 40px;
+    font-weight: bold;
+    text-align:center
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #5B40A6;
+    border-color: #5B40A6;
+    
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #5B40A6;
+    border-color: #5B40A6;
+    
+}
+.btn:focus {
+    color: #ffffff;
+    background-color: #5B40A6;
+    border-color: #5B40A6;
+}
+
+.about-app-heading {
+    color: #5B40A6;
+    text-align:center;
+}
+
+#getting-healthy {
+    font-style:italic;
+    font-weight:800;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #5B40A6;
+    border-color: transparent;
+}
+
+#workout-now {
+    padding-bottom:30px;
+    padding-top:10px;
+    text-align:center;
+}
